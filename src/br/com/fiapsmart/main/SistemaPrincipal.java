@@ -1,6 +1,7 @@
 package br.com.fiapsmart.main;
 
 import br.com.fiapsmart.model.Notebook;
+import br.com.fiapsmart.model.Processador;
 
 public class SistemaPrincipal {
     public static void main(String[] args) {
@@ -25,5 +26,12 @@ public class SistemaPrincipal {
 
         System.out.println("\n--- Testar Burla no Set ---");
         meuNotebook.setNivelBateria(500);
+
+        Processador meuProcessador = new Processador("Intel Core i7", 4.2);
+
+        Notebook novoNotebook = new Notebook("Dell", meuProcessador);
+
+        System.out.println("O notebook da marca " + novoNotebook.getMarca() +
+                " está equipado com um processador " + novoNotebook.getProcessador().getModelo());
     }
 }

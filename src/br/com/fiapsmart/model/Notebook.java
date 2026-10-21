@@ -14,6 +14,17 @@ public class Notebook {
       this.setConectadoWifi(false);
    }
 
+   private Processador processador;
+
+   public Notebook(String marca, Processador processador) {
+      this.setMarca(marca);
+      this.processador = processador;
+
+      this.setLigado(false);
+      this.setNivelBateria(0);
+      this.setConectadoWifi(false);
+   }
+
    public void ligar() {
       if (this.ligado) {
          System.out.println("Aviso: O notebook já está ligado.");
@@ -35,6 +46,10 @@ public class Notebook {
          this.nivelBateria += quantidade;
          System.out.println("Bateria carregada. Nível atual: " + this.nivelBateria + "%");
       }
+   }
+
+   public Processador getProcessador() {
+      return processador;
    }
 
    public String getMarca() {
