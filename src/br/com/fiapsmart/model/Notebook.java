@@ -7,6 +7,13 @@ public class Notebook {
    private  double espacoLivreGb;
    private  boolean conectadoWifi;
 
+   public Notebook(String marca, boolean ligado, int nivelBateria) {
+      this.setMarca(marca);
+      this.setLigado(ligado);
+      this.setNivelBateria(nivelBateria);
+      this.setConectadoWifi(false);
+   }
+
    public void ligar() {
       if (this.ligado) {
          System.out.println("Aviso: O notebook já está ligado.");
