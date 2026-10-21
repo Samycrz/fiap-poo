@@ -7,11 +7,11 @@ public class SistemaPrincipal {
 
         Notebook meuNotebook = new Notebook();
 
-        meuNotebook.marca = "Dell";
-        meuNotebook.ligado = true;
-        meuNotebook.nivelBateria = 0;
-        meuNotebook.espacoLivreGb = 250.5;
-        meuNotebook.conectadoWifi = false;
+        meuNotebook.setMarca("Dell");
+        meuNotebook.setLigado(true);
+        meuNotebook.setNivelBateria(80);
+        meuNotebook.setEspacoLivreGb(250.5); ;
+        meuNotebook.setConectadoWifi(false);
 
         System.out.println("--- Testar Valores Inválidos ---");
         meuNotebook.ligar();
@@ -23,5 +23,8 @@ public class SistemaPrincipal {
 
         System.out.println("\n--- Testar Limites do Estado ---");
         meuNotebook.carregarBateria(80);
+
+        System.out.println("\n--- Testar Burla no Set ---");
+        meuNotebook.setNivelBateria(500);
     }
 }

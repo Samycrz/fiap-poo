@@ -1,11 +1,11 @@
 package br.com.fiapsmart.model;
 
 public class Notebook {
-   public String marca;
-   public boolean ligado;
-   public int nivelBateria;
-   public  double espacoLivreGb;
-   public  boolean conectadoWifi;
+   private String marca;
+   private boolean ligado;
+   private int nivelBateria;
+   private  double espacoLivreGb;
+   private  boolean conectadoWifi;
 
    public void ligar() {
       if (this.ligado) {
@@ -28,5 +28,49 @@ public class Notebook {
          this.nivelBateria += quantidade;
          System.out.println("Bateria carregada. Nível atual: " + this.nivelBateria + "%");
       }
+   }
+
+   public String getMarca() {
+      return marca;
+   }
+
+   public void setMarca(String marca) {
+      this.marca = marca;
+   }
+
+   public boolean isLigado() {
+      return ligado;
+   }
+
+   public void setLigado(boolean ligado) {
+      this.ligado = ligado;
+   }
+
+   public int getNivelBateria() {
+      return nivelBateria;
+   }
+
+   public void setNivelBateria(int nivelBateria) {
+      if (nivelBateria < 0 || nivelBateria > 100) {
+         System.out.println("Erro: Nível de bateria inválido. Deve estar entre 0 e 100.");
+      } else {
+         this.nivelBateria = nivelBateria;
+      }
+   }
+
+   public double getEspacoLivreGb() {
+      return espacoLivreGb;
+   }
+
+   public void setEspacoLivreGb(double espacoLivreGb) {
+      this.espacoLivreGb = espacoLivreGb;
+   }
+
+   public boolean isConectadoWifi() {
+      return conectadoWifi;
+   }
+
+   public void setConectadoWifi(boolean conectadoWifi) {
+      this.conectadoWifi = conectadoWifi;
    }
 }
