@@ -9,11 +9,19 @@ public class SistemaPrincipal {
 
         meuNotebook.marca = "Dell";
         meuNotebook.ligado = true;
-        meuNotebook.nivelBateria = 80;
+        meuNotebook.nivelBateria = 0;
         meuNotebook.espacoLivreGb = 250.5;
         meuNotebook.conectadoWifi = false;
 
-        System.out.println("Marca: " + meuNotebook.marca);
-        System.out.println("Bateria: " + meuNotebook.nivelBateria + "%");
+        System.out.println("--- Testar Valores Inválidos ---");
+        meuNotebook.ligar();
+        meuNotebook.carregarBateria(-20);
+
+        System.out.println("\n--- Testar Valores Válidos ---");
+        meuNotebook.carregarBateria(40);
+        meuNotebook.ligar();
+
+        System.out.println("\n--- Testar Limites do Estado ---");
+        meuNotebook.carregarBateria(80);
     }
 }
