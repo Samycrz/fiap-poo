@@ -4,6 +4,8 @@ import br.com.fiapsmart.model.Notebook;
 import br.com.fiapsmart.model.NotebookCorporativo;
 import br.com.fiapsmart.model.NotebookGamer;
 import br.com.fiapsmart.model.Processador;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SistemaPrincipal {
     public static void main(String[] args) {
@@ -55,5 +57,18 @@ public class SistemaPrincipal {
         System.out.println("Teclado RGB: " + (notebookJogo.isTecladoRgb() ? "Sim" : "Não"));
 
         notebookJogo.ligar();
+
+        List<Notebook> inventario = new ArrayList<>();
+        inventario.add(notebookTrabalho);
+        inventario.add(notebookJogo);
+
+        System.out.println("--- O Teste de Fogo: Polimorfismo ---");
+
+        for (Notebook note : inventario) {
+            System.out.println("Otimizando portátil da marca: " + note.getMarca());
+
+            note.executarOtimizacao();
+            System.out.println("-------------------------------------");
+        }
     }
 }

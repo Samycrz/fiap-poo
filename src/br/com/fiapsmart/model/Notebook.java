@@ -48,6 +48,10 @@ public class Notebook {
       }
    }
 
+   public void executarOtimizacao() {
+      System.out.println("A executar otimização genérica de energia e processos do sistema...");
+   }
+
    public Processador getProcessador() {
       return processador;
    }
