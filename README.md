@@ -1,8 +1,12 @@
-# Projeto Portátil (Notebook)
+# Sistema de Gestão de Inventário de TI (Portáteis)
 
-## Descrição
-A classe `Notebook` representa um computador portátil do mundo real. O objetivo é gerir o estado físico e lógico do dispositivo, como a sua marca, o nível de energia e se está em funcionamento.
+## Descrição do Projeto
+Este projeto simula um sistema de gestão de hardware empresarial em Java. A aplicação foi desenvolvida aplicando princípios avançados de Programação Orientada a Objetos (POO) e a manipulação eficiente de dados em memória através do Java Collections Framework.
 
-## Métodos Disponíveis
-- `ligar()`: Altera o estado do portátil para ligado. **Regra de negócio:** O equipamento só liga se estiver atualmente desligado e possuir um nível de bateria superior a 0%.
-- `carregarBateria(int quantidade)`: Incrementa o nível de energia do portátil. **Regra de negócio:** Não aceita valores negativos de carga e impede que a bateria ultrapasse o limite físico de 100%.
+## Arquitetura e Padrões de Projeto (POO)
+- **Abstração e Herança:** A classe central `Notebook` é **abstrata**. Isto impede a criação de portáteis genéricos no sistema. Foram implementadas duas especializações concretas:
+    - `NotebookCorporativo`: Inclui regras de negócio para integração em domínios empresariais.
+    - `NotebookGamer`: Focado em alto desempenho e periféricos específicos (ex: teclado RGB).
+- **Composição:** Cada portátil exige, no momento da sua instanciação, um objeto `Processador` fortemente associado.
+- **Polimorfismo:** O método genérico `executarOtimizacao()` está subscrito em cada classe filha (`@Override`), permitindo que cada tipo de máquina reaja à sua própria maneira quando solicitada pelo sistema principal.
+
