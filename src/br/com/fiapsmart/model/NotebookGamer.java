@@ -9,6 +9,11 @@ public class NotebookGamer extends Notebook {
         System.out.println("A ativar o modo de desempenho máximo, a ligar o teclado RGB e a acelerar as ventoinhas.");
     }
 
+    @Override
+    public String obterTipoDeUso() {
+        return "Alto desempenho para jogos e renderização gráfica.";
+    }
+
     public NotebookGamer(String marca, Processador processador, boolean tecladoRgb) {
         super(marca, processador);
         this.tecladoRgb = tecladoRgb;

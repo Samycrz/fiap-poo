@@ -9,6 +9,11 @@ public class NotebookCorporativo extends Notebook {
         System.out.println("A ligar à VPN corporativa do domínio " + getDominioEmpresa() + " e a atualizar regras de firewall.");
     }
 
+    @Override
+    public String obterTipoDeUso() {
+        return "Uso estritamente profissional e tarefas de escritório.";
+    }
+
     public NotebookCorporativo(String marca, Processador processador, String dominioEmpresa) {
         super(marca, processador);
         this.dominioEmpresa = dominioEmpresa;

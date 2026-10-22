@@ -1,6 +1,6 @@
 package br.com.fiapsmart.model;
 
-public class Notebook {
+public abstract class Notebook {
    private String marca;
    private boolean ligado;
    private int nivelBateria;
@@ -52,6 +52,10 @@ public class Notebook {
       System.out.println("A executar otimização genérica de energia e processos do sistema...");
    }
 
+   public abstract String obterTipoDeUso();
+
+
+   //Getters e Setters
    public Processador getProcessador() {
       return processador;
    }
