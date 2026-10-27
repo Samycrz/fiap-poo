@@ -1,9 +1,7 @@
 package br.com.fiapsmart.main;
 
-import br.com.fiapsmart.model.Notebook;
-import br.com.fiapsmart.model.NotebookCorporativo;
-import br.com.fiapsmart.model.NotebookGamer;
-import br.com.fiapsmart.model.Processador;
+import br.com.fiapsmart.model.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,6 +79,16 @@ public class SistemaPrincipal {
             System.out.println("--- Teste de Abstração ---");
             System.out.println("Notebook Trabalho (" + notebookTrabalho.getMarca() + "): " + notebookTrabalho.obterTipoDeUso());
             System.out.println("Notebook Jogo (" + notebookJogo.getMarca() + "): " + notebookJogo.obterTipoDeUso());
+        }
+
+        System.out.println("\n--- Missão: Array de Interfaces (Polimorfismo com Notificavel) ---");
+        Notificavel[] centralDeAlertas = new Notificavel[3];
+        centralDeAlertas[0] = processadorCorporativo;
+        centralDeAlertas[1] = processadorGamer;
+        centralDeAlertas[2] = notebookTrabalho;
+
+        for (Notificavel emissor : centralDeAlertas) {
+            emissor.enviarNotificacao("Atualização de segurança crítica pendente.");
         }
     }
 }

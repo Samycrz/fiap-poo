@@ -1,6 +1,6 @@
 package br.com.fiapsmart.model;
 
-public abstract class Notebook {
+public abstract class Notebook implements Notificavel {
    private String marca;
    private boolean ligado;
    private int nivelBateria;
@@ -86,6 +86,11 @@ public abstract class Notebook {
       } else {
          this.nivelBateria = nivelBateria;
       }
+   }
+
+   @Override
+   public void enviarNotificacao(String mensagem) {
+      System.out.println("[CENTRAL DE NOTIFICAÇÕES | Notebook " + getMarca() + "]: " + mensagem);
    }
 
    public double getEspacoLivreGb() {

@@ -1,6 +1,6 @@
 package br.com.fiapsmart.model;
 
-public class Processador {
+public class Processador implements Notificavel {
     private String modelo;
     private double frequenciaGHz;
 
@@ -15,5 +15,11 @@ public class Processador {
 
     public double getFrequenciaGHz() {
         return frequenciaGHz;
+    }
+
+
+    @Override
+    public void enviarNotificacao(String mensagem) {
+        System.out.println("[ALERTA DE HARDWARE | Chip " + getModelo() + "]: " + mensagem);
     }
 }
